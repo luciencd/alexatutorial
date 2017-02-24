@@ -24,7 +24,7 @@ Open Amazon Lambda Dashboard [Amazon Lambda Dashboard](https://console.aws.amazo
 Click on blue button "Create a Lambda Function" call it rcostest.
 Search through the sample blueprints by looking up "Alexa". Select the alexa-skills-kit-color-expert-python one. Press next.
 
-You should see this: ![Image of rcostest](https://www.dropbox.com/s/9noz6kxh4p4ijvr/Screenshot%202017-02-24%2018.27.16.png?dl=0)
+You should see this: ![Image of rcostest](https://www.dropbox.com/s/9noz6kxh4p4ijvr/Screenshot%202017-02-24%2018.27.16.png?dl=1)
 
 Then clone this repo, and find the YACSwrapper file.
 
