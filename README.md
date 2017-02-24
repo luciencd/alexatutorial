@@ -11,9 +11,21 @@ Will use YACS as an example. It has a good REST API service, and can return usef
 
 What if we could interact with YACS on a vocal basis?
 
-Goal: List courses to alexa skill, and it will tell you if the skill is 
+Goal: 
+
+List a single course to alexa, and it will tell you how many seats are in all sections.
+
+List courses to alexa skill, and it will tell you if there are any possible schedules.
+
+
 API skills kit.
--Get Intents, Slot Types and Name setup.
+- Create a name for your app, to get started.
+
+- Create Intents JSON file.
+
+- Define Slot Types.
+
+- Add List of possible values for slots.
 
 
 
@@ -24,5 +36,5 @@ Amazon Web Services Backend.
 
 Extra details:
 
-Build tool to create all the files necessary in Alexa skills kit (as slot value possibilities can be dynamic)
+Build tool to create all the files necessary in Alexa skills kit (as slot value possibilities can be dynamic, courses change every year)
 
