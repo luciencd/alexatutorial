@@ -62,13 +62,37 @@ Now, whenever the Alexa hears you say an intent, it will direct it directly to y
 
 Now onto the "front-end" of the service.
 
-What if we could interact with YACS on a vocal basis?
+We are trying to interact with YACS on a vocal basis. What functions do we need? 
 
-Goal: 
+1. A basic function that tells you how many seats are available in a class.
 
-List a single course to alexa, and it will tell you how many seats are in all sections.
+2. A function which tells you if a set of classes has any conflicts.
 
-List courses to alexa skill, and it will tell you if there are any possible schedules.
+I'm sure there are more possibilities, but these are the two we will focus on.
+
+### Setting up the Intent Schema, Custom Slot Types, and Sample Utterances.
+
+In order for the "front-end" to work properly, you need to define what kind of things people will be asking.
+
+When someone asks alexa a question, the phrase is divided into three parts:
+
+1. Skill Name
+
+2. Intent
+
+3. Slots
+
+The skill name is self explanatory.
+
+The intent is the "function" that alexa thinks you are trying to invoke.
+
+The slots are the "arguments" to the intent that alexa binds to particular parts of the question.
+
+[Anatomy of a skill request](https://www.dropbox.com/s/iy0bxu4o359qy7u/Screenshot%202017-02-24%2019.26.22.png?dl=1)
+
+### Files necessary for Alexa Skills Kit.
+We must define all the Intents in a file called intentSchema.json
+
 
 
 API skills kit.
@@ -86,8 +110,17 @@ Amazon Web Services Backend.
 -Get lambda_function.py setup.
 -Create separate file to import.
 
+# Fixes:
 
-Extra details:
+Someone make a pull request to ensure any extension to this skill will conform to the Amazon Skill publishing requirements.
 
-Build tool to create all the files necessary in Alexa skills kit (as slot value possibilities can be dynamic, courses change every year)
 
+# Build tools:
+
+Because the Custom Slot type Course is time-dependant, you have to build this project every semester, to reimport all the courses from YACS.
+
+Builder/build.py
+
+# Bonus
+Fork the repo to accept 5, 6, 7 possile courses.
+Add functionality and improve the tutorial.
