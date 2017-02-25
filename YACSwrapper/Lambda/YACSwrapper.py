@@ -1,9 +1,11 @@
 import json
 import urllib2
-
+from urllib import quote
 def courseNameToCourseId(course_name):
 
     url = "https://yacs.cs.rpi.edu/api/v5/courses?search="+course_name+"&show_sections"
+    url = quote(url, safe="%/:=&?~#+!$,;'@()*[]")
+    print url
     response = urllib2.urlopen(url)
     result = json.load(response)
 
@@ -22,6 +24,8 @@ def getSchedulingConflict(course_names):
         section_ids += courseNameToCourseId(course)
 
     url = "https://yacs.cs.rpi.edu/api/v5/schedules?section_ids="+",".join(section_ids)
+    url = quote(url, safe="%/:=&?~#+!$,;'@()*[]")
+    print url
     response = urllib2.urlopen(url)
     result = json.load(response)
 
@@ -37,14 +41,17 @@ def getSchedulingConflict(course_names):
 
 def getSeatsLeft(course_name):
     url = "https://yacs.cs.rpi.edu/api/v5/courses?name="+course_name+"&show_sections"
+    url = quote(url, safe="%/:=&?~#+!$,;'@()*[]")
+    print url
     response = urllib2.urlopen(url)
     result = json.load(response)
     ##graduate vs undergrad seats left?
     seats_left = 0
     for course in result["courses"]:
         if course["name"] == course_name:
-            sections = section["sections"]
+            sections = course["sections"]
             for section in sections:
+                #print section["seats"],section["seats_taken"]
                 seats_left += section["seats"]-section["seats_taken"]
 
     if(seats_left <= 0):
@@ -54,4 +61,6 @@ def getSeatsLeft(course_name):
     else:
         response = str(seats_left)+" seats left in "+course_name
 
-    return course_name
+    return response
+
+print getSeatsLeft("Introduction to Biology")
