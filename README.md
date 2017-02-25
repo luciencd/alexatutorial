@@ -2,6 +2,8 @@
 
 This is a tutorial for creating a basic Alexa skill. (No Alexa Required)
 
+[Basic introduction to the Amazon Alexa Presentation](https://docs.google.com/presentation/d/1_MrOelQ8XY2sOSL3B1xbdB1rRVJ9f54HVJ7jmIOt3SI/edit?usp=sharing)
+
 ## Introduction
 
 My goal for this tutorial is to provide knowledge on how to create a basic voice wrapper for a 3rd party service which has a REST API.
