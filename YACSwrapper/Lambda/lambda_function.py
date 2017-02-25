@@ -60,11 +60,11 @@ def get_welcome_response():
 
     session_attributes = {}
     card_title = "Welcome"
-    speech_output = "Welcome to the eve ship assistant. Say help for a list of commands. "
+    speech_output = "Welcome to the yacs alexa app. Say help for a list of commands."
 
     # If the user either does not reply to the welcome message or says something
     # that is not understood, they will be prompted again with this text.
-    reprompt_text = "Welcome to the eve ship assistant. Say help for a list of commands."
+    reprompt_text = "Welcome to the yacs alexa app. Say help for a list of commands."
 
     should_end_session = False
     #should_end_session = True
@@ -78,11 +78,11 @@ def get_help():
 
     session_attributes = {}
     card_title = "Help"
-    speech_output = "Here's a list of commands: ship bonus, wormhole, attack, jita price, gang probability, how dangerous is. For example, if you want to learn about the ship bonus command, say 'help ship bonus'."
+    speech_output = "Here's a list of commands: seats left, scheduling conflict."
 
     # If the user either does not reply to the welcome message or says something
     # that is not understood, they will be prompted again with this text.
-    reprompt_text = "Here's a list of commands: ship bonus, wormhole, attack, jita price, gang probability, how dangerous is. Say 'help ship bonus' one for more information."
+    reprompt_text = "Here's a list of commands: seats left, scheduling conflict."
 
     should_end_session = False
     #should_end_session = True
