@@ -16,7 +16,7 @@ There are **two** parts to this project:
 
 ## Getting Started
 
-### Backend Setup
+### AWS Lambda "Backend" Setup
 
 Create an AWS account with a free trial with your education email account *@*.edu.
 [AWS FREE TIER LINK](https://aws.amazon.com/s/dm/optimization/server-side-test/free-tier/free_np/)
@@ -32,6 +32,9 @@ Search through the sample blueprints by looking up "Alexa". Select the alexa-ski
 You should see this: ![Image of rcostest](https://www.dropbox.com/s/9noz6kxh4p4ijvr/Screenshot%202017-02-24%2018.27.16.png?dl=1)
 
 Then clone this repo, and find the YACSwrapper file.
+
+It should contain:
+
 ```
 YACSwrapper
 │
@@ -48,21 +51,16 @@ YACSwrapper
 └───Builder
     │   builder.py
 ```
-It should contain:
--YACSwrapper/
-  -Alexa/
-    -IntentSchema.txt
-    -SampleUtterances.txt
-    -LIST_OF_COURSES.txt
-  -Lambda/
-    -lambda_function.py
-    -YACSwrapper.py
 
-Select lambda_function.py + YACSwrapper.py and archive it. Then upload the ZIP file in this way:
+Select lambda_function.py + YACSwrapper.py and archive them. Then upload the ZIP file in this way:
 
 ![Image of zip Upload](https://www.dropbox.com/s/4chure32xil4kev/Screenshot%202017-02-24%2018.46.40.png?dl=1)
 
+Now, whenever the Alexa hears you say an intent, it will direct it directly to your lambda function(lambda_function.py), which will send a function call to YACSwrapper.py, which will call the YACS API. Once you get data back from YACS, you create an output phrase, and send it back to lambda_function.py. That will then get sent all the way back to the Alexa itself in the form of a vocalized sentence.
 
+## Alexa Skills Kit "Front-end" Setup
+
+Now onto the "front-end" of the service.
 
 What if we could interact with YACS on a vocal basis?
 
