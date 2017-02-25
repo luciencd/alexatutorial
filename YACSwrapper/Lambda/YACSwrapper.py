@@ -12,9 +12,9 @@ def courseNameToCourseId(course_name):
     course_ids = []
     for section in result["courses"]:
         if section["name"].lower() == course_name.lower():
-            course_ids.append(section["id"])
+            course_ids.append(str(section["id"]))
 
-    return result
+    return course_ids
 
 
 
@@ -62,5 +62,5 @@ def getSeatsLeft(course_name):
         response = str(seats_left)+" seats left in "+course_name
     #print response
     return response
-
-print getSeatsLeft("econometrics")
+print getSchedulingConflict(["introduction to biology","software design and documentation","RCOS","Observational Astronomy"])
+#print getSeatsLeft("econometrics")
