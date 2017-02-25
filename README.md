@@ -6,7 +6,7 @@ This is a tutorial for creating a basic Alexa skill. (No Alexa Required)
 
 My goal for this tutorial is to provide knowledge on how to create a basic voice wrapper for a 3rd party service which has a REST API.
 
-This tutorial will show you how to make a voice wrapper for YACS, the RPI course scheduler. It has a good REST API service, which returns useful information.
+This tutorial will show you how to make a voice wrapper for [YACS](yacs.cs.rpi.edu), the RPI course scheduler. It has a good REST API service, which returns useful information.
 
 There are **two** parts to this project: 
 
