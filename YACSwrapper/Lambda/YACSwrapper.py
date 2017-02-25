@@ -52,7 +52,8 @@ def getSeatsLeft(course_name):
             sections = course["sections"]
             for section in sections:
                 #print section["seats"],section["seats_taken"]
-                seats_left += section["seats"]-max(0,section["seats_taken"])
+                seats_left += max(0,section["seats"]-section["seats_taken"])
+
 
     if(seats_left <= 0):
         response = "No seats left in "+course_name
@@ -63,4 +64,4 @@ def getSeatsLeft(course_name):
     #print response
     return response
 #print getSchedulingConflict(["introduction to biology","software design and documentation","RCOS","Observational Astronomy"])
-#print getSeatsLeft("econometrics")
+#print getSeatsLeft("Introduction to Biology")
