@@ -31,11 +31,11 @@ def getSchedulingConflict(course_names):
 
     response = ""
     if(len(result["schedules"])==0):
-        response = "These classes have conflicts"
+        response = "These classes have time conflicts."
     elif(len(result["schedules"])==1):
-        response = "1 schedule generated"
+        response = "1 schedule was generated."
     else:
-        reponse = len(result["schedules"])+" schedules generated"
+        reponse = len(result["schedules"])+" schedules were generated."
 
     return response
 
@@ -56,11 +56,11 @@ def getSeatsLeft(course_name):
 
 
     if(seats_left <= 0):
-        response = "No seats left in "+course_name
+        response = "No seats are left in "+course_name
     elif(seats_left == 1):
-        response = "1 seat left in "+course_name
+        response = "1 seat are left in "+course_name
     else:
-        response = str(seats_left)+" seats left in "+course_name
+        response = str(seats_left)+" seats are left in "+course_name
     #print response
     return response
 #print getSchedulingConflict(["introduction to biology","software design and documentation","RCOS","Observational Astronomy"])
