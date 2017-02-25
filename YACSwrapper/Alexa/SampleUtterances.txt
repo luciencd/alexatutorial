@@ -1,0 +1,1 @@
+SchedulingConflict Can I take {Course1}, {Course2}, {Course3} and {Course4} together?

@@ -1,0 +1,40 @@
+{
+  "intents": [
+    {
+      "intent": "SchedulingConflict",
+      "slots": [
+        {
+          "name":"Course1",
+          "type":"LIST_OF_COURSES"
+        },
+        {
+          "name":"Course2",
+          "type":"LIST_OF_COURSES"
+        },
+        {
+          "name":"Course3",
+          "type":"LIST_OF_COURSES"
+        },
+        {
+          "name":"Course4",
+          "type":"LIST_OF_COURSES"
+        }
+      ]
+    },
+    {
+      "intent": "SeatsLeft",
+      "slots":[
+        {
+          "name":"Course",
+          "type":"LIST_OF_COURSES"
+        }
+      ]
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    }
+  ]
+}
