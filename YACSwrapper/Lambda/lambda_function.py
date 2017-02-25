@@ -123,13 +123,16 @@ def get_scheduling_conflict(intent,session):
     reprompt_text = None
     should_end_session = False
     should_end_session = True
+
+    list_of_courses = [intent['slots']['course1']['value'],intent['slots']['course2']['value'],intent['slots']['course3']['value'],intent['slots']['course4']['value']]
+
     try:
-        speech_output = marketInfo.getJitaPrice(intent['slots']['Item']['value'])
+        speech_output = YACSwrapper.get_scheduling_conflict(list_of_courses)
     except KeyError:
         speech_output = "You must say 4 classes."
 
     return build_response(session_attributes, build_speechlet_response(
-        "Get jita price", speech_output, "anything else?", should_end_session))
+        "Get scheduling conflicts", speech_output, "anything else?", should_end_session))
 
 def get_seats_left(intent, session):
     session_attributes = {}
@@ -137,11 +140,11 @@ def get_seats_left(intent, session):
     should_end_session = False
     should_end_session = True
     try:
-        speech_output = attackInfo.getAttackInfo(intent['slots']['Ship']['value'])
+        speech_output = YACSwrapper.getAttackInfo(intent['slots']['course']['value'])
     except KeyError:
         speech_output = "You must a class to get seats left."
     return build_response(session_attributes, build_speechlet_response(
-        "Get attack info", speech_output, "anything else?", should_end_session))
+        "Get seats left", speech_output, "anything else?", should_end_session))
 
 
 
