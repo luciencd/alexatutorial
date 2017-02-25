@@ -11,7 +11,7 @@ def courseNameToCourseId(course_name):
 
     course_ids = []
     for section in result["courses"]:
-        if section["name"] == course_name:
+        if section["name"].lower() == course_name.lower():
             course_ids.append(section["id"])
 
     return result
@@ -40,7 +40,7 @@ def getSchedulingConflict(course_names):
     return response
 
 def getSeatsLeft(course_name):
-    url = "https://yacs.cs.rpi.edu/api/v5/courses?name="+course_name+"&show_sections"
+    url = "https://yacs.cs.rpi.edu/api/v5/courses?search="+course_name+"&show_sections"
     url = quote(url, safe="%/:=&?~#+!$,;'@()*[]")
     print url
     response = urllib2.urlopen(url)
@@ -48,7 +48,7 @@ def getSeatsLeft(course_name):
     ##graduate vs undergrad seats left?
     seats_left = 0
     for course in result["courses"]:
-        if course["name"] == course_name:
+        if course["name"].lower() == course_name.lower():
             sections = course["sections"]
             for section in sections:
                 #print section["seats"],section["seats_taken"]
@@ -60,7 +60,7 @@ def getSeatsLeft(course_name):
         response = "1 seat left in "+course_name
     else:
         response = str(seats_left)+" seats left in "+course_name
-
+    #print response
     return response
 
-print getSeatsLeft("Introduction to Biology")
+print getSeatsLeft("econometrics")

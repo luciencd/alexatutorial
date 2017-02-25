@@ -125,7 +125,7 @@ def get_scheduling_conflict(intent,session):
     should_end_session = False
     should_end_session = True
 
-    list_of_courses = [intent['slots']['Course1']['value'],intent['slots']['Course2']['value'],intent['slots']['Course3']['value'],intent['slots']['Course4']['value']]
+    list_of_courses = [intent['slots']['Courseone']['value'],intent['slots']['Coursetwo']['value'],intent['slots']['Coursethree']['value'],intent['slots']['Coursefour']['value']]
 
     try:
         speech_output = YACSwrapper.getSchedulingConflict(list_of_courses)
