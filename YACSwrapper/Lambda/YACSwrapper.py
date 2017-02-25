@@ -5,7 +5,7 @@ def courseNameToCourseId(course_name):
 
     url = "https://yacs.cs.rpi.edu/api/v5/courses?search="+course_name+"&show_sections"
     url = quote(url, safe="%/:=&?~#+!$,;'@()*[]")
-    print url
+    #print url
     response = urllib2.urlopen(url)
     result = json.load(response)
 
@@ -25,7 +25,7 @@ def getSchedulingConflict(course_names):
 
     url = "https://yacs.cs.rpi.edu/api/v5/schedules?section_ids="+",".join(section_ids)
     url = quote(url, safe="%/:=&?~#+!$,;'@()*[]")
-    print url
+    #print url
     response = urllib2.urlopen(url)
     result = json.load(response)
 
@@ -42,7 +42,7 @@ def getSchedulingConflict(course_names):
 def getSeatsLeft(course_name):
     url = "https://yacs.cs.rpi.edu/api/v5/courses?search="+course_name+"&show_sections"
     url = quote(url, safe="%/:=&?~#+!$,;'@()*[]")
-    print url
+    #print url
     response = urllib2.urlopen(url)
     result = json.load(response)
     ##graduate vs undergrad seats left?
@@ -62,5 +62,5 @@ def getSeatsLeft(course_name):
         response = str(seats_left)+" seats left in "+course_name
     #print response
     return response
-print getSchedulingConflict(["introduction to biology","software design and documentation","RCOS","Observational Astronomy"])
+#print getSchedulingConflict(["introduction to biology","software design and documentation","RCOS","Observational Astronomy"])
 #print getSeatsLeft("econometrics")
