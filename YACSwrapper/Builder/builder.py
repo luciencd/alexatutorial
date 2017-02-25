@@ -8,11 +8,14 @@ def importYACScourses():
     response = urllib2.urlopen(url)
     result = json.load(response)
 
-    list_of_course_ids = []
+    classesset = set()
 
     with open("../Alexa/LIST_OF_COURSES.txt","w") as f:
         for course in result["courses"]:
-            f.write(course["name"]+"\n")
+            classesset.add(course["name"])
+
+        for course in classesset:
+            f.write(course+"\n")
 
 
 
