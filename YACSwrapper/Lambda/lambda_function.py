@@ -9,6 +9,7 @@ http://amzn.to/1LGWsLG
 
 from __future__ import print_function
 import YACSwrapper
+import json
 
 
 # --------------- Data for API -----
@@ -124,10 +125,10 @@ def get_scheduling_conflict(intent,session):
     should_end_session = False
     should_end_session = True
 
-    list_of_courses = [intent['slots']['course1']['value'],intent['slots']['course2']['value'],intent['slots']['course3']['value'],intent['slots']['course4']['value']]
+    list_of_courses = [intent['slots']['Course1']['value'],intent['slots']['Course2']['value'],intent['slots']['Course3']['value'],intent['slots']['Course4']['value']]
 
     try:
-        speech_output = YACSwrapper.get_scheduling_conflict(list_of_courses)
+        speech_output = YACSwrapper.getSchedulingConflict(list_of_courses)
     except KeyError:
         speech_output = "You must say 4 classes."
 
@@ -140,9 +141,9 @@ def get_seats_left(intent, session):
     should_end_session = False
     should_end_session = True
     try:
-        speech_output = YACSwrapper.getAttackInfo(intent['slots']['course']['value'])
+        speech_output = YACSwrapper.getSeatsLeft(intent['slots']['Course']['value'])
     except KeyError:
-        speech_output = "You must a class to get seats left."
+        speech_output = "You must say a class to get seats left."
     return build_response(session_attributes, build_speechlet_response(
         "Get seats left", speech_output, "anything else?", should_end_session))
 

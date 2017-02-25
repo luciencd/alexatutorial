@@ -1,4 +1,4 @@
-import JSON
+import json
 import urllib2
 
 def courseNameToCourseId(course_name):
@@ -16,7 +16,7 @@ def courseNameToCourseId(course_name):
 
 
 
-def SchedulingConflict(course_names):
+def getSchedulingConflict(course_names):
     section_ids = []
     for course in course_names:
         section_ids += courseNameToCourseId(course)
@@ -35,7 +35,7 @@ def SchedulingConflict(course_names):
 
     return response
 
-def seatsLeft(course_name):
+def getSeatsLeft(course_name):
     url = "https://yacs.cs.rpi.edu/api/v5/courses?name="+course_name+"&show_sections"
     response = urllib2.urlopen(url)
     result = json.load(response)
