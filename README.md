@@ -164,6 +164,19 @@ Because the Custom Slot type Course is time-dependant, you have to build this pr
 
 Builder/build.py
 
+# Presentation notes Feb 25th
+
+Problems people encountered include:
+
+Alexa not working with RPI wifi , solution: use iphone hotspot.
+AWS Triggers (alexa not there originally.), solution: refresh
+AWS lambda function trigger and role, solution: select "Create New role from templates" then in the below input bar, type alexa, then select "simple microservices permissions"
+
+Alexa Skills Kit: during the configuration step, you must make sure your AWS lambda instance is hosted in North Virginia.
+
+New bug which did not appear during testing. LIST_OF_COURSES contained duplicates, and custom slot types cannot handle duplicates. Solved by making set from YACS api in build tool.
+
+Todo: add th
 # Bonus
 Fork the repo to accept 5, 6, 7 possile courses.
 Add functionality and improve the tutorial.
