@@ -58,6 +58,9 @@ Select lambda_function.py + YACSwrapper.py and archive them. Then upload the ZIP
 
 Now, whenever the Alexa hears you say an intent, it will direct it directly to your lambda function(lambda_function.py), which will send a function call to YACSwrapper.py, which will call the YACS API. Once you get data back from YACS, you create an output phrase, and send it back to lambda_function.py. That will then get sent all the way back to the Alexa itself in the form of a vocalized sentence.
 
+Now you are finished setting up the backend to your alexa service.
+
+
 ## Alexa Skills Kit "Front-end" Setup
 
 Now onto the "front-end" of the service.
@@ -136,6 +139,8 @@ We have reached the point where we can test if the backend is producing the righ
 Move on to the Testing portion.
 
 Paste both of these commands into here: You should see the input and output of the Amazon Lambda instance.
+
+![Testing framework](https://www.dropbox.com/s/8a9m8qtuzdgxlhx/Screenshot%202017-02-24%2022.51.02.png?dl=0)
 
 How many seats are left in Microbiogy
 Can I take Introduction to biology, Observational Astronomy, RCOS, and Software Design and Documentation
