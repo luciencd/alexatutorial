@@ -4,19 +4,19 @@
       "intent": "SchedulingConflict",
       "slots": [
         {
-          "name":"Course1",
+          "name":"Courseone",
           "type":"LIST_OF_COURSES"
         },
         {
-          "name":"Course2",
+          "name":"Coursetwo",
           "type":"LIST_OF_COURSES"
         },
         {
-          "name":"Course3",
+          "name":"Coursethree",
           "type":"LIST_OF_COURSES"
         },
         {
-          "name":"Course4",
+          "name":"Coursefour",
           "type":"LIST_OF_COURSES"
         }
       ]

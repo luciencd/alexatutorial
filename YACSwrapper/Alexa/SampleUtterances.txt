@@ -1,1 +1,2 @@
-SchedulingConflict Can I take {Course1}, {Course2}, {Course3} and {Course4} together?
+SchedulingConflict Can I take {Courseone} {Coursetwo} {Coursethree} and {Coursefour} together
+SeatsLeft How many seats are left in {Course}
