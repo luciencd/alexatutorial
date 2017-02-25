@@ -140,7 +140,7 @@ Move on to the Testing portion.
 
 Paste both of these commands into here: You should see the input and output of the Amazon Lambda instance.
 
-![Testing framework](https://www.dropbox.com/s/8a9m8qtuzdgxlhx/Screenshot%202017-02-24%2022.51.02.png?dl=0)
+![Testing framework](https://www.dropbox.com/s/8a9m8qtuzdgxlhx/Screenshot%202017-02-24%2022.51.02.png?dl=1)
 
 How many seats are left in Microbiogy
 Can I take Introduction to biology, Observational Astronomy, RCOS, and Software Design and Documentation
